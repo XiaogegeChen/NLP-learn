@@ -1,0 +1,10 @@
+训练模型，crf_learn template trainingSet model
+crf_learn -f 4 -p 8 -c 3 F:\program\Python\NLP\nlp\src\ner\data\template.txt F:\program\Python\NLP\nlp\src\ner\data\trainingset.txt F:\program\Python\NLP\nlp\src\ner\data\model
+
+测试模型 crf_test -m model testSet > testResult
+crf_test -m F:\program\Python\NLP\nlp\src\ner\data\model F:\program\Python\NLP\nlp\src\ner\data\testset.txt > F:\program\Python\NLP\nlp\src\ner\data\testresult.txt
+
+训练模型，吧词性也纳为一列特征
+crf_learn -f 4 -p 8 -c 3 F:\program\Python\NLP\nlp\src\ner\data\templatewithflag.txt F:\program\Python\NLP\nlp\src\ner\data\trainingsetwithflag.txt F:\program\Python\NLP\nlp\src\ner\data\modelwithflag
+测试模型，吧词性也纳为一列特征
+crf_test -m F:\program\Python\NLP\nlp\src\ner\data\modelwithflag F:\program\Python\NLP\nlp\src\ner\data\testsetwithflag.txt > F:\program\Python\NLP\nlp\src\ner\data\testresultwithflag.txt
